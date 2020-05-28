@@ -17,8 +17,23 @@ namespace RazorPagesUI.Pages
             _logger = logger;
         }
 
+
+        [BindProperty(SupportsGet =true)]
+        public string City { get; set; }
+
         public void OnGet()
         {
+
+            if (string.IsNullOrEmpty(City))
+            {
+                City = "The Web";
+            }
+           
+        }
+
+        public void OnPost()
+        {
+
 
         }
     }
